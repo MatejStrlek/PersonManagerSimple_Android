@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="?colorOnPrimary"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_60dp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            tools:text="Title"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_60dp" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_weight="1"
+            android:src="@drawable/delete"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_40dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
