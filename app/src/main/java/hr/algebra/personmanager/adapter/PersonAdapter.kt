@@ -38,7 +38,7 @@ class PersonAdapter (
                 .transform(RoundedCornersTransformation(50, 5))
                 .into(ivImage)
 
-            tvTitle.text = person.toString()
+            tvTitle.text = person.title
         }
     }
 

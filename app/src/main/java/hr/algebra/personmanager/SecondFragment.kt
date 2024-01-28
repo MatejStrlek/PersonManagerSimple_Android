@@ -38,7 +38,6 @@ private const val MIME_TYPE = "image/*"
 class SecondFragment : Fragment() {
 
     private lateinit var person: Person
-
     private var _binding: FragmentSecondBinding? = null
 
     // This property is only valid between onCreateView and
@@ -92,6 +91,7 @@ class SecondFragment : Fragment() {
         binding.tvDate.text = person.birthDate.format(DateTimeFormatter.ISO_DATE)
         binding.etFirstName.setText(person.firstName ?: "")
         binding.etLastName.setText(person.lastName ?: "")
+        binding.etTitle.setText(person.title ?: "")
     }
 
     private fun setupListeners() {
@@ -107,6 +107,14 @@ class SecondFragment : Fragment() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 person.lastName = text?.toString()?.trim()
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.etTitle.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                person.title = text?.toString()?.trim()
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
@@ -167,7 +175,7 @@ class SecondFragment : Fragment() {
     private fun formValid(): Boolean {
         var ok = true
 
-        arrayOf(binding.etFirstName, binding.etLastName).forEach {
+        arrayOf(binding.etFirstName, binding.etLastName, binding.etTitle).forEach {
             if (it.text.trim().isNullOrEmpty()){
                 ok = false
                 it.error = getString(R.string.required_field)
