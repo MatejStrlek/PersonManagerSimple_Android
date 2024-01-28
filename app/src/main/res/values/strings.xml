@@ -43,4 +43,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="date">Date</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="commit">Commit</string>
+    <string name="required_field">Required field</string>
 </resources>

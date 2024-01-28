@@ -1,35 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            tools:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300dp" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/date"
+                android:textSize="@dimen/_27sp"
+                android:textColor="?colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                tools:text="yyyy-mm-dd"
+                android:textSize="@dimen/_27sp"
+                android:textStyle="bold"
+                android:layout_weight="2"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/first_name"
+                android:textSize="@dimen/_27sp"
+                android:textColor="?colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:textSize="@dimen/_27sp"
+                android:textStyle="bold"
+                android:layout_weight="2"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/last_name"
+                android:textSize="@dimen/_27sp"
+                android:textColor="?colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:textSize="@dimen/_27sp"
+                android:textStyle="bold"
+                android:layout_weight="2"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/button_second"
+            android:id="@+id/btnCommit"
+            android:text="@string/commit"
+            android:textColor="@color/white"
+            android:layout_gravity="end"
+            android:backgroundTint="?colorOnPrimary"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textview_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</ScrollView>
