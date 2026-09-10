@@ -49,4 +49,6 @@
     <string name="commit">Commit</string>
     <string name="required_field">Required field</string>
     <string name="title">Title</string>
+    <string name="validation_error_title">Incomplete form</string>
+    <string name="validation_error_message">Please fill in all required fields and select a profile image.</string>
 </resources>

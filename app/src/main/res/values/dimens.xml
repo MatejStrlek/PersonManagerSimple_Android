@@ -9,4 +9,5 @@
     <dimen name="_300dp">300dp</dimen>
     <dimen name="_20dp">20dp</dimen>
     <dimen name="_25sp">25sp</dimen>
+    <dimen name="_27sp">27sp</dimen>
 </resources>

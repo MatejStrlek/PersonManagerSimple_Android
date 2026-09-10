@@ -1,6 +1,7 @@
 package hr.algebra.personmanager
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
@@ -126,7 +127,7 @@ class SecondFragment : Fragment() {
             handleImage()
         }
         binding.btnCommit.setOnClickListener {
-            if (formValid()) commit()
+            if (formValid()) commit() else showValidationError()
         }
     }
 
@@ -176,13 +177,21 @@ class SecondFragment : Fragment() {
         var ok = true
 
         arrayOf(binding.etFirstName, binding.etLastName, binding.etTitle).forEach {
-            if (it.text.trim().isNullOrEmpty()){
+            if (it.text.trim().isEmpty()){
                 ok = false
                 it.error = getString(R.string.required_field)
             }
         }
 
         return ok && person.picturePath != null
+    }
+
+    private fun showValidationError() {
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.validation_error_title)
+            .setMessage(R.string.validation_error_message)
+            .setPositiveButton(android.R.string.ok, null)
+            .show()
     }
 
     private fun commit() {
